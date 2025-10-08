@@ -1,0 +1,13 @@
+{
+  "elements": [
+    {
+      "id": "hero-animation",
+      "name": "Hero Animation",
+      "description": "Aggressive kinetic reveal on scroll.",
+      "tags": [
+        "motion",
+        "expressive"
+      ]
+    }
+  ]
+}

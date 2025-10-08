@@ -1,0 +1,1 @@
+# Demo Brief\nDesign a one‑page studio site that feels human and modern.

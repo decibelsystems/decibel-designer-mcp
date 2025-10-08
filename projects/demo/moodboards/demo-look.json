@@ -1,0 +1,27 @@
+{
+  "id": "demo-look",
+  "title": "Demo Look",
+  "tags": [
+    "neuromancer",
+    "warm-minimal",
+    "isometric"
+  ],
+  "assets": [
+    {
+      "id": "a1",
+      "uri": "https://example.com/console.jpg",
+      "tags": [
+        "interface",
+        "isometric"
+      ]
+    },
+    {
+      "id": "a2",
+      "uri": "https://example.com/type-specimen.png",
+      "tags": [
+        "typography",
+        "inter"
+      ]
+    }
+  ]
+}
