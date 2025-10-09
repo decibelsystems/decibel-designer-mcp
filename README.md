@@ -17,6 +17,7 @@ Decibel Designer provides Claude with tools to:
 - **Track progress** — Chronological notes on what shipped and what's next
 - **Organize visual direction** — Moodboards with tagged assets
 - **Conduct design reviews** — Review work based on the established guidelines, rules, and principles
+- **Search everything** — Query across all design docs by keyword or tag
 - **Align creative direction** — tone, goals, and audience
 
 When connected via MCP, Claude maintains design context across projects and conversations.
