@@ -21,7 +21,7 @@ Phase 0 is complete! We've created a solid foundation for Figma integration with
 
 ### 1. Build the Project
 ```bash
-cd /Volumes/Ashitaka/Documents/GitHub/decibel-designer-mcp
+cd /path/to/decibel-designer-mcp
 npm run build
 ```
 

@@ -145,3 +145,9 @@ vite.config.ts.timestamp-*
 
 # Decibel Designer cache
 projects/*/cache/
+
+# Local development tools (user-specific)
+sync-to-mcp.sh
+watch-sync.sh
+setup-dev.sh
+DEV_CHEATSHEET.md
