@@ -143,7 +143,11 @@ vite.config.ts.timestamp-*
 .AppleDouble
 .LSOverride
 
-# Decibel Designer cache
+# Decibel Designer - Project Data Protection
+# Only the demo project is committed to git
+# User projects are kept local and not synced
+projects/*
+!projects/demo/
 projects/*/cache/
 
 # Local development tools (user-specific)
