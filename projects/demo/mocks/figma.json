@@ -1,0 +1,473 @@
+{
+  "meta": {
+    "lastSync": "2025-10-14T00:00:00Z",
+    "fileKey": "demo-file-key",
+    "fileName": "Demo Design System"
+  },
+  "components": [
+    {
+      "id": "1:100",
+      "name": "Button/Primary",
+      "description": "Primary action button for main CTAs",
+      "type": "COMPONENT",
+      "properties": {
+        "width": 200,
+        "height": 48,
+        "cornerRadius": 8,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 12,
+        "paddingBottom": 12
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.4,
+            "g": 0.2,
+            "b": 0.6,
+            "a": 1
+          },
+          "variableId": "VariableID:primary-purple"
+        }
+      ],
+      "textStyle": "Label/Medium",
+      "autoLayout": {
+        "mode": "HORIZONTAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "spacing": 8
+      },
+      "variants": ["size", "state"],
+      "tags": ["interactive", "button", "cta"]
+    },
+    {
+      "id": "1:101",
+      "name": "Button/Secondary",
+      "description": "Secondary button for less prominent actions",
+      "type": "COMPONENT",
+      "properties": {
+        "width": 200,
+        "height": 48,
+        "cornerRadius": 8,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 12,
+        "paddingBottom": 12
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.4,
+            "g": 0.2,
+            "b": 0.6,
+            "a": 1
+          },
+          "variableId": "VariableID:primary-purple"
+        }
+      ],
+      "textStyle": "Label/Medium",
+      "autoLayout": {
+        "mode": "HORIZONTAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "spacing": 8
+      },
+      "variants": ["size", "state"],
+      "tags": ["interactive", "button", "secondary"]
+    },
+    {
+      "id": "1:200",
+      "name": "Card/Default",
+      "description": "Content card with optional header, body, and footer",
+      "type": "COMPONENT",
+      "properties": {
+        "width": 360,
+        "height": 240,
+        "cornerRadius": 12,
+        "padding": 24
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 1
+          }
+        }
+      ],
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.1
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "radius": 8
+        }
+      ],
+      "autoLayout": {
+        "mode": "VERTICAL",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "spacing": 16
+      },
+      "variants": ["elevation", "width"],
+      "tags": ["container", "card", "layout"]
+    },
+    {
+      "id": "1:300",
+      "name": "Input/Text",
+      "description": "Text input field with label and validation states",
+      "type": "COMPONENT",
+      "properties": {
+        "width": 320,
+        "height": 48,
+        "cornerRadius": 6,
+        "paddingLeft": 16,
+        "paddingRight": 16
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.98,
+            "g": 0.98,
+            "b": 0.98,
+            "a": 1
+          },
+          "variableId": "VariableID:surface-light"
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.85,
+            "g": 0.85,
+            "b": 0.85,
+            "a": 1
+          },
+          "variableId": "VariableID:border-default"
+        }
+      ],
+      "textStyle": "Body/Regular",
+      "variants": ["state", "size"],
+      "tags": ["input", "form", "interactive"]
+    },
+    {
+      "id": "1:400",
+      "name": "Icon/Alert",
+      "description": "Alert icon for warning messages",
+      "type": "COMPONENT",
+      "properties": {
+        "width": 24,
+        "height": 24
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.95,
+            "g": 0.55,
+            "b": 0.2,
+            "a": 1
+          },
+          "variableId": "VariableID:warning"
+        }
+      ],
+      "tags": ["icon", "alert", "warning"]
+    }
+  ],
+  "styles": {
+    "text": [
+      {
+        "id": "S:heading-1",
+        "name": "Heading/H1",
+        "fontFamily": "Inter",
+        "fontWeight": 700,
+        "fontSize": 48,
+        "lineHeight": 56,
+        "letterSpacing": -0.5
+      },
+      {
+        "id": "S:heading-2",
+        "name": "Heading/H2",
+        "fontFamily": "Inter",
+        "fontWeight": 700,
+        "fontSize": 36,
+        "lineHeight": 44,
+        "letterSpacing": -0.25
+      },
+      {
+        "id": "S:body-regular",
+        "name": "Body/Regular",
+        "fontFamily": "Inter",
+        "fontWeight": 400,
+        "fontSize": 16,
+        "lineHeight": 24,
+        "letterSpacing": 0
+      },
+      {
+        "id": "S:label-medium",
+        "name": "Label/Medium",
+        "fontFamily": "Inter",
+        "fontWeight": 600,
+        "fontSize": 14,
+        "lineHeight": 20,
+        "letterSpacing": 0.1
+      }
+    ],
+    "color": [
+      {
+        "id": "S:primary-purple",
+        "name": "Primary/Purple",
+        "color": {
+          "r": 0.4,
+          "g": 0.2,
+          "b": 0.6,
+          "a": 1
+        },
+        "hex": "#663399"
+      },
+      {
+        "id": "S:surface-light",
+        "name": "Surface/Light",
+        "color": {
+          "r": 0.98,
+          "g": 0.98,
+          "b": 0.98,
+          "a": 1
+        },
+        "hex": "#FAFAFA"
+      },
+      {
+        "id": "S:border-default",
+        "name": "Border/Default",
+        "color": {
+          "r": 0.85,
+          "g": 0.85,
+          "b": 0.85,
+          "a": 1
+        },
+        "hex": "#D9D9D9"
+      },
+      {
+        "id": "S:warning",
+        "name": "Feedback/Warning",
+        "color": {
+          "r": 0.95,
+          "g": 0.55,
+          "b": 0.2,
+          "a": 1
+        },
+        "hex": "#F28C33"
+      }
+    ]
+  },
+  "variables": {
+    "colors": [
+      {
+        "id": "VariableID:primary-purple",
+        "name": "primary-purple",
+        "resolvedType": "COLOR",
+        "valuesByMode": {
+          "default": {
+            "r": 0.4,
+            "g": 0.2,
+            "b": 0.6,
+            "a": 1
+          }
+        },
+        "scopes": ["ALL_FILLS", "ALL_STROKES"],
+        "codeSyntax": {
+          "WEB": "var(--primary-purple)",
+          "ANDROID": "colors.primary_purple",
+          "iOS": "Color.primaryPurple"
+        }
+      },
+      {
+        "id": "VariableID:surface-light",
+        "name": "surface-light",
+        "resolvedType": "COLOR",
+        "valuesByMode": {
+          "default": {
+            "r": 0.98,
+            "g": 0.98,
+            "b": 0.98,
+            "a": 1
+          }
+        },
+        "scopes": ["ALL_FILLS"],
+        "codeSyntax": {
+          "WEB": "var(--surface-light)",
+          "ANDROID": "colors.surface_light",
+          "iOS": "Color.surfaceLight"
+        }
+      },
+      {
+        "id": "VariableID:border-default",
+        "name": "border-default",
+        "resolvedType": "COLOR",
+        "valuesByMode": {
+          "default": {
+            "r": 0.85,
+            "g": 0.85,
+            "b": 0.85,
+            "a": 1
+          }
+        },
+        "scopes": ["ALL_STROKES"],
+        "codeSyntax": {
+          "WEB": "var(--border-default)",
+          "ANDROID": "colors.border_default",
+          "iOS": "Color.borderDefault"
+        }
+      },
+      {
+        "id": "VariableID:warning",
+        "name": "warning",
+        "resolvedType": "COLOR",
+        "valuesByMode": {
+          "default": {
+            "r": 0.95,
+            "g": 0.55,
+            "b": 0.2,
+            "a": 1
+          }
+        },
+        "scopes": ["ALL_FILLS", "ALL_STROKES"],
+        "codeSyntax": {
+          "WEB": "var(--warning)",
+          "ANDROID": "colors.warning",
+          "iOS": "Color.warning"
+        }
+      }
+    ],
+    "spacing": [
+      {
+        "id": "VariableID:spacing-xs",
+        "name": "spacing-xs",
+        "resolvedType": "FLOAT",
+        "valuesByMode": {
+          "default": 4
+        },
+        "codeSyntax": {
+          "WEB": "var(--spacing-xs)",
+          "ANDROID": "dimen.spacing_xs",
+          "iOS": "Spacing.xs"
+        }
+      },
+      {
+        "id": "VariableID:spacing-sm",
+        "name": "spacing-sm",
+        "resolvedType": "FLOAT",
+        "valuesByMode": {
+          "default": 8
+        },
+        "codeSyntax": {
+          "WEB": "var(--spacing-sm)",
+          "ANDROID": "dimen.spacing_sm",
+          "iOS": "Spacing.sm"
+        }
+      },
+      {
+        "id": "VariableID:spacing-md",
+        "name": "spacing-md",
+        "resolvedType": "FLOAT",
+        "valuesByMode": {
+          "default": 16
+        },
+        "codeSyntax": {
+          "WEB": "var(--spacing-md)",
+          "ANDROID": "dimen.spacing_md",
+          "iOS": "Spacing.md"
+        }
+      },
+      {
+        "id": "VariableID:spacing-lg",
+        "name": "spacing-lg",
+        "resolvedType": "FLOAT",
+        "valuesByMode": {
+          "default": 24
+        },
+        "codeSyntax": {
+          "WEB": "var(--spacing-lg)",
+          "ANDROID": "dimen.spacing_lg",
+          "iOS": "Spacing.lg"
+        }
+      }
+    ],
+    "borderRadius": [
+      {
+        "id": "VariableID:radius-sm",
+        "name": "radius-sm",
+        "resolvedType": "FLOAT",
+        "valuesByMode": {
+          "default": 6
+        },
+        "codeSyntax": {
+          "WEB": "var(--radius-sm)",
+          "ANDROID": "dimen.radius_sm",
+          "iOS": "Radius.sm"
+        }
+      },
+      {
+        "id": "VariableID:radius-md",
+        "name": "radius-md",
+        "resolvedType": "FLOAT",
+        "valuesByMode": {
+          "default": 8
+        },
+        "codeSyntax": {
+          "WEB": "var(--radius-md)",
+          "ANDROID": "dimen.radius_md",
+          "iOS": "Radius.md"
+        }
+      },
+      {
+        "id": "VariableID:radius-lg",
+        "name": "radius-lg",
+        "resolvedType": "FLOAT",
+        "valuesByMode": {
+          "default": 12
+        },
+        "codeSyntax": {
+          "WEB": "var(--radius-lg)",
+          "ANDROID": "dimen.radius_lg",
+          "iOS": "Radius.lg"
+        }
+      }
+    ]
+  },
+  "aliases": {
+    "cta": "Button/Primary",
+    "primary-button": "Button/Primary",
+    "main-button": "Button/Primary",
+    "secondary-button": "Button/Secondary",
+    "panel": "Card/Default",
+    "container": "Card/Default",
+    "text-input": "Input/Text",
+    "field": "Input/Text"
+  }
+}
