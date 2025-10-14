@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { projectResourceUris } from "../store/fsStore.js";
-import { getFigmaData, getTokens } from "../store/figmaStore.js";
+import { getFigmaData, getTokens, FigmaComponent } from "../store/figmaStore.js";
 
 function mime(p: string) {
   if (p.endsWith(".md")) return "text/markdown";
@@ -61,7 +61,7 @@ export function registerResources(server: McpServer) {
       const data = await getFigmaData(projectId);
       
       return {
-        resources: data.components.map((component) => ({
+        resources: data.components.map((component: FigmaComponent) => ({
           uri: `figma://component/${component.id}`,
           name: component.name,
           description: component.description || `Figma component: ${component.name}`,
@@ -88,7 +88,7 @@ export function registerResources(server: McpServer) {
       const projectId = "demo"; // TODO: Make this dynamic per project
       const componentId = uri.pathname.replace("/", "");
       const data = await getFigmaData(projectId);
-      const component = data.components.find((c) => c.id === componentId);
+      const component = data.components.find((c: FigmaComponent) => c.id === componentId);
 
       if (!component) {
         throw new Error(`Component ${componentId} not found`);

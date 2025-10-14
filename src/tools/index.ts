@@ -1,9 +1,19 @@
 // src/tools/index.ts
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { appendMarkdown, upsertPrinciple, searchGuidelines, addMoodAsset } from "../store/fsStore.js";
+import { 
+  appendMarkdown, 
+  upsertPrinciple, 
+  searchGuidelines, 
+  addMoodAsset 
+} from "../store/fsStore.js";
+import { 
+  syncTokensToProject, 
+  getComponent 
+} from "../store/figmaStore.js";
 
 export function registerTools(server: McpServer) {
+  // Existing tools
   server.tool(
     "add_note",
     "Append a note to notes.md for a project",
@@ -75,6 +85,59 @@ export function registerTools(server: McpServer) {
     async ({ project_id, moodboard_id, asset }) => {
       await addMoodAsset(project_id, moodboard_id, asset);
       return { content: [{ type: "text", text: "Moodboard asset added." }] };
+    }
+  );
+
+  // NEW: Phase 1 Figma Tools
+  server.tool(
+    "sync_tokens",
+    "Pull design tokens from Figma and write to project design-tokens.json",
+    {
+      project_id: z.string(),
+      force_refresh: z.boolean().optional(),
+    },
+    async ({ project_id, force_refresh }) => {
+      const result = await syncTokensToProject(project_id);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `✅ Synced ${result.count} design tokens from Figma to ${result.path}`,
+          },
+        ],
+      };
+    }
+  );
+
+  server.tool(
+    "get_component_details",
+    "Get detailed information about a specific Figma component by name or ID",
+    {
+      project_id: z.string(),
+      identifier: z.string(),
+    },
+    async ({ project_id, identifier }) => {
+      const component = await getComponent(project_id, identifier);
+
+      if (!component) {
+        return {
+          content: [
+            {
+              type: "text",
+              text: `❌ Component "${identifier}" not found`,
+            },
+          ],
+        };
+      }
+
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(component, null, 2),
+          },
+        ],
+      };
     }
   );
 }

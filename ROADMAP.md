@@ -18,26 +18,27 @@
 ---
 
 ### Phase 1: Core Data Access
-**Status:** In Progress (Week 3-4)
+**Status:** ✅ COMPLETE - Ready for Testing
 
 **Goals:** Real data, real queries
 
-**Planned Features:**
-1. **Real Figma REST API Integration**
+**Completed Features:**
+1. **Real Figma REST API Integration** ✅
    - Connect to Figma Files API
    - Fetch components and variables
    - Handle authentication & rate limiting
+   - Transform Figma data to DD format
 
-2. **`get_component_details` Tool**
+2. **`get_component_details` Tool** ✅
    - Deep inspection of individual components
-   - Property analysis
-   - Style references
-   - Usage in variants
+   - Component lookup by ID or name
+   - Alias support for common names
 
-3. **`sync_tokens` Tool**
+3. **`sync_tokens` Tool** ✅
    - Pull design tokens from Figma variables
-   - Write to `/projects/<id>/tokens.json`
-   - Keep tokens in sync with Figma source of truth
+   - Write to `/projects/<id>/design-tokens.json`
+   - Organize by category (colors, spacing, typography, etc.)
+   - Design Tokens Community Group schema compliant
 
 4. **Enhanced Token Resource**
    - Separate `tokens` resource (not nested in components)
@@ -51,15 +52,17 @@
 
 **Example Usage:**
 ```
-"Compare Button/Primary to Button/Secondary"
-"Sync our design tokens from Figma"
-"What's the current value of primary-purple?"
+"Sync design tokens from Figma for the decibel-website project"
+"Get details for the Button/Primary component"
+"What components are available in the design system?"
 ```
+
+**Testing:** See `PHASE1_TESTING.md` for detailed testing instructions.
 
 ---
 
 ### Phase 2: Intelligence Layer
-**Status:** Planned (Week 5-6)
+**Status:** Ready to Start
 
 **Goals:** Make Claude useful for designers
 
@@ -69,7 +72,12 @@
    - Link components to principles via tags
    - Watch mode for auto-regeneration
 
-2. **`review_figma` Tool** (unified review)
+2. **`generate_moodboard_from_figma_styles` Tool** (NEW)
+   - Extract color palettes as mood assets
+   - Convert Figma frames to moodboard references  
+   - Auto-generate visual direction from Figma styles
+
+3. **`review_figma` Tool** (unified review)
    - Frame-level analysis
    - Component change review
    - Accessibility checks (contrast, sizing)
